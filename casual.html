@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraStep 雅步女性休閒鞋系列。經典小白鞋、編織樂福鞋、復古厚底鞋、莫卡辛豆豆鞋，結合人體工學足弓支撐，為您的日常生活提供最溫柔的舒適陪伴。">
+  <title>AuraStep 雅步 | 女性休閒鞋系列 - 舒適樂活行</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <div class="logo-wrapper">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="AuraStep Logo" class="logo-img">
+          <span class="logo-text">AuraStep</span>
+        </a>
+      </div>
+      
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">首頁</a>
+        <a href="about.html" class="nav-link">公司簡介</a>
+        <a href="casual.html" class="nav-link active">休閒鞋</a>
+        <a href="running.html" class="nav-link">跑步鞋</a>
+        <a href="others.html" class="nav-link">其它類</a>
+        <a href="contact.html" class="nav-link">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="container page-banner-content">
+        <h1 class="page-banner-title serif-title">休閒鞋系列</h1>
+        <div class="page-banner-breadcrumbs">
+          <a href="index.html">首頁</a> &nbsp;/&nbsp; <span>休閒鞋</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Grid with Sidebar Filters -->
+    <div class="container category-page-container">
+      <!-- Left: Interactive Sidebar Filters -->
+      <aside class="sidebar-filters">
+        <!-- Sort By Dropdown -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">商品排序</h3>
+          <select id="sort-select" class="form-control" style="background-color: var(--neutral-white);">
+            <option value="default">預設排序</option>
+            <option value="price-asc">價格：由低到高</option>
+            <option value="price-desc">價格：由高到低</option>
+          </select>
+        </div>
+
+        <!-- Filter 1: Price -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">篩選價格</h3>
+          <div class="filter-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="price-range" value="under-2500">
+              NT$ 2,500 以下
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="price-range" value="2500-3000">
+              NT$ 2,500 - 3,000
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="price-range" value="above-3000">
+              NT$ 3,000 以上
+            </label>
+          </div>
+        </div>
+
+        <!-- Filter 2: Size -->
+        <div class="filter-group">
+          <h3 class="filter-group-title">篩選尺寸 (EU)</h3>
+          <div class="filter-options" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="35"> 35</label>
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="36"> 36</label>
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="37"> 37</label>
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="38"> 38</label>
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="39"> 39</label>
+            <label class="checkbox-label"><input type="checkbox" class="size-filter-cb" value="40"> 40</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right: Products Grid -->
+      <section>
+        <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--neutral-gray); display: flex; justify-content: space-between; align-items: center;">
+          <p>共顯示 <span id="product-count" style="font-weight: 600; color: var(--neutral-dark);">0</span> 款商品</p>
+        </div>
+        
+        <div id="category-products-grid" class="products-grid">
+          <!-- Dynamically populated by products.js -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <h3 class="footer-logo-text">AuraStep</h3>
+        <p>AuraStep 雅步，專為現代女性設計的優雅舒適鞋履品牌。我們秉持匠心精神，精心雕琢每一處細節，伴您自信地踏出每一步。</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links column 1 -->
+      <div>
+        <h4 class="footer-heading">商品分類</h4>
+        <ul class="footer-links">
+          <li><a href="casual.html">休閒鞋系列</a></li>
+          <li><a href="running.html">專業慢跑鞋</a></li>
+          <li><a href="others.html">高跟鞋與短靴</a></li>
+          <li><a href="casual.html">人氣小白鞋</a></li>
+        </ul>
+      </div>
+
+      <!-- Links column 2 -->
+      <div>
+        <h4 class="footer-heading">關於我們</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">品牌故事</a></li>
+          <li><a href="contact.html">門市資訊</a></li>
+          <li><a href="contact.html">聯絡客服</a></li>
+          <li><a href="#">隱私權政策</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter column -->
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">電子報訂閱</h4>
+        <p>訂閱以獲得 AuraStep 的獨家促銷資訊與新品發佈消息。</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="您的電子郵件" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">訂閱</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AuraStep 雅步. All Rights Reserved. Designed for Elegant Walk.</p>
+      <p>客服專線：0800-123-456 (週一至週五 09:00 - 18:00)</p>
+    </div>
+  </footer>
+
+  <!-- Include Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Category-specific Rendering and Filtering Script
+    const CATEGORY = 'casual';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      initFilters();
+    });
+
+    function renderProducts() {
+      const grid = document.getElementById('category-products-grid');
+      const countEl = document.getElementById('product-count');
+      if (!grid) return;
+
+      // Filter base products by category
+      let items = getProductsByCategory(CATEGORY);
+
+      // Apply Price filters
+      const checkedPrices = Array.from(document.querySelectorAll('input[name="price-range"]:checked')).map(el => el.value);
+      if (checkedPrices.length > 0) {
+        items = items.filter(p => {
+          return checkedPrices.some(range => {
+            if (range === 'under-2500') return p.price < 2500;
+            if (range === '2500-3000') return p.price >= 2500 && p.price <= 3000;
+            if (range === 'above-3000') return p.price > 3000;
+            return true;
+          });
+        });
+      }
+
+      // Apply Size filters
+      const checkedSizes = Array.from(document.querySelectorAll('.size-filter-cb:checked')).map(el => el.value);
+      if (checkedSizes.length > 0) {
+        items = items.filter(p => {
+          return checkedSizes.some(size => p.specs.sizes.includes(size));
+        });
+      }
+
+      // Apply Sorting
+      const sortVal = document.getElementById('sort-select').value;
+      if (sortVal === 'price-asc') {
+        items.sort((a, b) => a.price - b.price);
+      } else if (sortVal === 'price-desc') {
+        items.sort((a, b) => b.price - a.price);
+      }
+
+      // Update count
+      if (countEl) countEl.innerText = items.length;
+
+      // Render cards
+      grid.innerHTML = '';
+      if (items.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--neutral-gray); padding: 60px 0;">沒有符合篩選條件的商品</div>';
+        return;
+      }
+
+      items.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        
+        let mediaContent = '';
+        if (product.isSVG) {
+          mediaContent = product.svgContent;
+        } else {
+          mediaContent = `<img src="${product.image}" alt="${product.name}">`;
+        }
+
+        const categoryLabel = '休閒鞋';
+
+        card.innerHTML = `
+          <div class="product-img-box">
+            ${mediaContent}
+            <div class="product-action-overlay">
+              <a href="product.html?id=${product.id}" class="quick-view-btn">查看商品細節</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-category-text">${categoryLabel}</span>
+              <h3 class="product-name-title">${product.name}</h3>
+              <p class="product-en-name">${product.englishName}</p>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">${product.price.toLocaleString()}</span>
+              <a href="product.html?id=${product.id}" class="view-detail-link">
+                立即選購
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function initFilters() {
+      // Inputs event listeners
+      const inputs = document.querySelectorAll('input[type="checkbox"]');
+      inputs.forEach(input => {
+        input.addEventListener('change', renderProducts);
+      });
+
+      const sortSelect = document.getElementById('sort-select');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', renderProducts);
+      }
+    }
+  </script>
+</body>
+</html>

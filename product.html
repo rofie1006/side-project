@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraStep 雅步單品詳細頁。查看產品材質細節、特殊人體工學設計與尺寸對照，支持顏色尺寸選購。">
+  <title>AuraStep 雅步 | 商品詳情</title>
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <div class="logo-wrapper">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="AuraStep Logo" class="logo-img">
+          <span class="logo-text">AuraStep</span>
+        </a>
+      </div>
+      
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">首頁</a>
+        <a href="about.html" class="nav-link">公司簡介</a>
+        <a href="casual.html" class="nav-link">休閒鞋</a>
+        <a href="running.html" class="nav-link">跑步鞋</a>
+        <a href="others.html" class="nav-link">其它類</a>
+        <a href="contact.html" class="nav-link">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="product-detail-container">
+      <div class="container">
+        <!-- Breadcrumbs -->
+        <div class="page-banner-breadcrumbs" style="margin-bottom: 40px;">
+          <a href="index.html">首頁</a> &nbsp;/&nbsp; 
+          <a id="breadcrumb-category-link" href="#">分類</a> &nbsp;/&nbsp; 
+          <span id="breadcrumb-product-name" style="color: var(--neutral-dark);">商品</span>
+        </div>
+
+        <!-- Detail Layout Grid -->
+        <div class="product-detail-grid">
+          <!-- Left Column: Gallery/Image Box -->
+          <div class="detail-gallery">
+            <div class="detail-main-img-box" id="detail-image-box">
+              <!-- Dynamically populated by JS -->
+            </div>
+          </div>
+
+          <!-- Right Column: Product Information and Options -->
+          <div class="detail-info">
+            <span class="detail-category" id="detail-category-label">分類</span>
+            <h1 class="detail-name serif-title" id="detail-product-name">商品名稱</h1>
+            <p class="detail-en-name" id="detail-product-en-name">English Name</p>
+            
+            <p class="detail-price" id="detail-product-price">0</p>
+            
+            <p class="detail-desc" id="detail-product-desc">商品描述將會在這裡顯示。</p>
+            
+            <!-- Selector 1: Colors -->
+            <div class="selector-group">
+              <h4 class="selector-title">選擇顏色：<span id="selected-color-text" style="font-weight: 500; color: var(--primary-dark);">請選擇</span></h4>
+              <div class="color-options" id="detail-color-options">
+                <!-- Dynamically populated by JS -->
+              </div>
+            </div>
+
+            <!-- Selector 2: Sizes -->
+            <div class="selector-group" style="margin-bottom: 40px;">
+              <h4 class="selector-title">選擇尺寸 (EU)：<span id="selected-size-text" style="font-weight: 500; color: var(--primary-dark);">請選擇</span></h4>
+              <div class="size-options" id="detail-size-options">
+                <!-- Dynamically populated by JS -->
+              </div>
+            </div>
+
+            <!-- Quantity & CTA Actions -->
+            <div class="detail-actions">
+              <div class="qty-selector">
+                <button class="qty-btn" id="qty-minus" aria-label="Decrease quantity">-</button>
+                <div class="qty-val" id="qty-value">1</div>
+                <button class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+              </div>
+              <button class="btn btn-primary add-to-cart-btn" id="add-to-cart-action">加入購物車</button>
+            </div>
+
+            <!-- Features list inside details -->
+            <div class="detail-features">
+              <h4 class="detail-features-title">商品重點特性</h4>
+              <div class="detail-features-list" id="detail-features-list">
+                <!-- Dynamically populated by JS -->
+              </div>
+            </div>
+
+            <!-- Specifications Table -->
+            <h4 class="selector-title" style="border-bottom:1px solid var(--neutral-light-gray); padding-bottom:12px; margin-bottom:16px;">商品規格</h4>
+            <table class="detail-specs-table">
+              <tbody>
+                <tr>
+                  <td>商品材質</td>
+                  <td id="spec-material">-</td>
+                </tr>
+                <tr>
+                  <td>可選尺寸</td>
+                  <td id="spec-sizes">-</td>
+                </tr>
+                <tr>
+                  <td>可選顏色</td>
+                  <td id="spec-colors">-</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- You May Also Like (Recommended items of same category) -->
+    <section class="featured-products related-products">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 50px;">
+          <span class="section-tag">Recommendations</span>
+          <h2 class="section-title serif-title">您可能也會喜歡</h2>
+          <p class="section-subtitle">為您推薦同系列的人氣暢銷鞋款，探索更多搭配樂趣</p>
+        </div>
+
+        <div id="related-products-grid" class="products-grid">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <h3 class="footer-logo-text">AuraStep</h3>
+        <p>AuraStep 雅步，專為現代女性設計的優雅舒適鞋履品牌。我們秉持匠心精神，精心雕琢每一處細節，伴您自信地踏出每一步。</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links column 1 -->
+      <div>
+        <h4 class="footer-heading">商品分類</h4>
+        <ul class="footer-links">
+          <li><a href="casual.html">休閒鞋系列</a></li>
+          <li><a href="running.html">專業慢跑鞋</a></li>
+          <li><a href="others.html">高跟鞋與短靴</a></li>
+          <li><a href="casual.html">人氣小白鞋</a></li>
+        </ul>
+      </div>
+
+      <!-- Links column 2 -->
+      <div>
+        <h4 class="footer-heading">關於我們</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">品牌故事</a></li>
+          <li><a href="contact.html">門市資訊</a></li>
+          <li><a href="contact.html">聯絡客服</a></li>
+          <li><a href="#">隱私權政策</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter column -->
+      <div class="footer-newsletter">
+        <h4 class="footer-heading">電子報訂閱</h4>
+        <p>訂閱以獲得 AuraStep 的獨家促銷資訊與新品發佈消息。</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="您的電子郵件" class="newsletter-input" required>
+          <button type="submit" class="newsletter-btn">訂閱</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="container footer-bottom">
+      <p>&copy; 2026 AuraStep 雅步. All Rights Reserved. Designed for Elegant Walk.</p>
+      <p>客服專線：0800-123-456 (週一至週五 09:00 - 18:00)</p>
+    </div>
+  </footer>
+
+  <!-- Include Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Product Detail Engine
+    let currentProduct = null;
+    let selectedColor = null;
+    let selectedSize = null;
+    let quantity = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+      
+      if (!productId) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      currentProduct = getProductById(productId);
+      
+      if (!currentProduct) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      renderProductDetail();
+      initDetailInteractions();
+      renderRelatedProducts();
+    });
+
+    function renderProductDetail() {
+      // Document title
+      document.title = `AuraStep 雅步 | ${currentProduct.name}`;
+
+      // Breadcrumbs
+      const categoryLinks = {
+        'casual': { label: '休閒鞋', href: 'casual.html' },
+        'running': { label: '跑步鞋', href: 'running.html' },
+        'others': { label: '其它類', href: 'others.html' }
+      };
+      
+      const catInfo = categoryLinks[currentProduct.category];
+      const categoryLinkEl = document.getElementById('breadcrumb-category-link');
+      if (categoryLinkEl && catInfo) {
+        categoryLinkEl.innerText = catInfo.label;
+        categoryLinkEl.href = catInfo.href;
+      }
+      
+      const breadProductNameEl = document.getElementById('breadcrumb-product-name');
+      if (breadProductNameEl) breadProductNameEl.innerText = currentProduct.name;
+
+      // Image
+      const imageBox = document.getElementById('detail-image-box');
+      if (imageBox) {
+        if (currentProduct.isSVG) {
+          imageBox.innerHTML = currentProduct.svgContent;
+        } else {
+          imageBox.innerHTML = `<img src="${currentProduct.image}" alt="${currentProduct.name}">`;
+        }
+      }
+
+      // Title & Price
+      document.getElementById('detail-category-label').innerText = catInfo ? catInfo.label : '新品';
+      document.getElementById('detail-product-name').innerText = currentProduct.name;
+      document.getElementById('detail-product-en-name').innerText = currentProduct.englishName;
+      document.getElementById('detail-product-price').innerText = currentProduct.price.toLocaleString();
+      document.getElementById('detail-product-desc').innerText = currentProduct.description;
+
+      // Color options
+      const colorContainer = document.getElementById('detail-color-options');
+      if (colorContainer) {
+        colorContainer.innerHTML = '';
+        
+        // Define color hex codes for dots simulation
+        const colorHexMap = {
+          '燕麥杏': '#E8D7C3',
+          '曜石黑': '#1C1A17',
+          '櫻花粉': '#F8C1C6',
+          '經典純白': '#FFFFFF',
+          '奶油白': '#FFFDF9',
+          '金標白': '#FCF6E5',
+          '復古燕麥': '#EBE3D5',
+          '溫柔粉鹽': '#FFD1DC',
+          '經典黑白': '#4E4D4A',
+          '太妃焦糖': '#C08A58',
+          '經典深黑': '#1A110B',
+          '象牙奶油': '#FFF9F2',
+          '暖沙杏': '#E5D3C3',
+          '薄荷綠': '#C8E6C9',
+          '霧霾藍': '#B0BEC5',
+          '極光藍': '#5393FF',
+          '瑩光粉': '#FF4081',
+          '極簡白黑': '#E0E0E0',
+          '珊瑚粉': '#FF8A80',
+          '星耀黑': '#212121',
+          '極速藍': '#00838F',
+          '閃電螢光': '#EEFF41',
+          '白金限定': '#FFFDD0',
+          '魅惑紫': '#7B1FA2',
+          '櫻花淡粉': '#FCE4EC',
+          '曜石沉黑': '#111111',
+          '軍野綠': '#2E7D32',
+          '沉穩灰黑': '#37474F',
+          '熔岩粉橘': '#FF7043',
+          '魅惑正紅': '#D32F2F',
+          '高貴奧利黑': '#0D0D0D',
+          '奢華香檳金': '#E3C16F',
+          '復古漆皮紅': '#880E4F',
+          '氣質亮面黑': '#121212',
+          '優雅杏仁奶': '#F5EBE6',
+          '復古深褐': '#4E3629',
+          '百搭霧黑': '#1A1A1A',
+          '知性暖卡其': '#C2B280',
+          '氣質米白': '#FAF5F0',
+          '極簡深黑': '#121212',
+          '奢華玫瑰金': '#B76E79',
+          '栗子褐': '#6D4C41',
+          '溫柔煙粉': '#E8A7A1',
+          '奧利深黑': '#050505',
+          '魅惑暗紅': '#720917'
+        };
+
+        currentProduct.specs.colors.forEach((color, index) => {
+          const dot = document.createElement('div');
+          dot.className = 'color-dot';
+          const hex = colorHexMap[color] || '#D3D3D3';
+          dot.style.backgroundColor = hex;
+          dot.setAttribute('data-color', color);
+          
+          dot.innerHTML = `<span class="color-dot-tooltip">${color}</span>`;
+          colorContainer.appendChild(dot);
+        });
+      }
+
+      // Size options
+      const sizeContainer = document.getElementById('detail-size-options');
+      if (sizeContainer) {
+        sizeContainer.innerHTML = '';
+        currentProduct.specs.sizes.forEach(size => {
+          const box = document.createElement('div');
+          box.className = 'size-box';
+          box.innerText = size;
+          box.setAttribute('data-size', size);
+          sizeContainer.appendChild(box);
+        });
+      }
+
+      // Features list
+      const featureListContainer = document.getElementById('detail-features-list');
+      if (featureListContainer) {
+        featureListContainer.innerHTML = '';
+        currentProduct.features.forEach(feat => {
+          const item = document.createElement('div');
+          item.className = 'detail-feature-item';
+          item.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>${feat}</span>
+          `;
+          featureListContainer.appendChild(item);
+        });
+      }
+
+      // Specs Table
+      document.getElementById('spec-material').innerText = currentProduct.specs.material;
+      document.getElementById('spec-sizes').innerText = currentProduct.specs.sizes.join(', ');
+      document.getElementById('spec-colors').innerText = currentProduct.specs.colors.join(', ');
+    }
+
+    function initDetailInteractions() {
+      // Color selectors
+      const colorDots = document.querySelectorAll('.color-dot');
+      const selectedColorText = document.getElementById('selected-color-text');
+      colorDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          colorDots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+          selectedColor = dot.getAttribute('data-color');
+          selectedColorText.innerText = selectedColor;
+        });
+      });
+
+      // Size selectors
+      const sizeBoxes = document.querySelectorAll('.size-box');
+      const selectedSizeText = document.getElementById('selected-size-text');
+      sizeBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+          sizeBoxes.forEach(b => b.classList.remove('active'));
+          box.classList.add('active');
+          selectedSize = box.getAttribute('data-size');
+          selectedSizeText.innerText = `EU ${selectedSize}`;
+        });
+      });
+
+      // Quantity buttons
+      const qtyValEl = document.getElementById('qty-value');
+      document.getElementById('qty-plus').addEventListener('click', () => {
+        quantity++;
+        qtyValEl.innerText = quantity;
+      });
+      document.getElementById('qty-minus').addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyValEl.innerText = quantity;
+        }
+      });
+
+      // Add to Cart Action
+      const cartBtn = document.getElementById('add-to-cart-action');
+      cartBtn.addEventListener('click', () => {
+        if (!selectedColor) {
+          showToast('請先選擇一個顏色！', 'error');
+          return;
+        }
+        if (!selectedSize) {
+          showToast('請先選擇您的尺寸！', 'error');
+          return;
+        }
+
+        showToast(`成功將 ${quantity} 雙 ${currentProduct.name} (${selectedColor} / EU ${selectedSize}) 加入購物車！`);
+      });
+    }
+
+    function renderRelatedProducts() {
+      const grid = document.getElementById('related-products-grid');
+      if (!grid) return;
+
+      // Filter same category products, excluding current one
+      const related = products.filter(p => p.category === currentProduct.category && p.id !== currentProduct.id).slice(0, 4);
+
+      grid.innerHTML = '';
+      
+      if (related.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:var(--neutral-gray);">無同系列推薦商品</div>';
+        return;
+      }
+
+      const categoryLabels = {
+        'casual': '休閒鞋',
+        'running': '跑步鞋',
+        'others': '其它類'
+      };
+
+      related.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        
+        let mediaContent = '';
+        if (product.isSVG) {
+          mediaContent = product.svgContent;
+        } else {
+          mediaContent = `<img src="${product.image}" alt="${product.name}">`;
+        }
+
+        card.innerHTML = `
+          <div class="product-img-box">
+            ${mediaContent}
+            <div class="product-action-overlay">
+              <a href="product.html?id=${product.id}" class="quick-view-btn">查看商品細節</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <span class="product-category-text">${categoryLabels[product.category]}</span>
+              <h3 class="product-name-title">${product.name}</h3>
+              <p class="product-en-name">${product.englishName}</p>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">${product.price.toLocaleString()}</span>
+              <a href="product.html?id=${product.id}" class="view-detail-link">
+                立即選購
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
